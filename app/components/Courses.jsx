@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 const fetchCourses = async () => {
-	const response = await fetch("http://0.0.0.0:3000/api/courses")
+	const response = await fetch(`${process.env.SERVER_URL}/api/courses`)
 	const courses = await response.json()
 	return courses
 }
