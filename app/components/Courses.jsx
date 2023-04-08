@@ -1,14 +1,7 @@
 import Link from "next/link"
+import courses from "../api/courses/data.json"
 
-const fetchCourses = async () => {
-	const response = await fetch(`${process.env.SERVER_URL}/api/courses`)
-	const courses = await response.json()
-	return courses
-}
-
-const Courses = async () => {
-	const courses = await fetchCourses()
-
+const Courses = async (data) => {
 	return (
 		<div className="courses">
 			{courses.map((course) => {
